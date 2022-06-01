@@ -1,8 +1,18 @@
+
 <section class="cart-show">
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+
+  <% if enhanced_cart.length == 0 %>
+  <div class="alert">
+  <h1>Your cart is empty, please visit <%= link_to "here", :root %>
+  </h1>
+
+  </div>
+
+  <% else %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -25,7 +35,7 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -49,4 +59,7 @@
     </div>
   </div>
 
+<% end %>
+
 </section>
+
