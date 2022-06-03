@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_062916) do
+ActiveRecord::Schema.define(version: 2022_06_03_002543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,30 @@ ActiveRecord::Schema.define(version: 2021_06_26_062916) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  create_table "quizzes", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.text "question", null: false
+    t.text "answer", null: false
+    t.boolean "is_public", default: true
+    t.string "random_string", limit: 255
+  end
+
+  create_table "results", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "quiz_id"
+    t.string "user_answer", limit: 255
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "results", "quizzes", name: "results_quiz_id_fkey", on_delete: :cascade
 end
