@@ -21,26 +21,22 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  
+
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <%# <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          > %>
+        <li class="nav-item dropdown">
+          
             <%# Categories %>
-          <%# </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-            <li class="nav-item">
+            <li class="dropdown-item">
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
-          <%# </ul>
-        </li> %>
+           </ul>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -71,6 +67,33 @@
     </div>
   </div>
 </nav>
+
+
+<ul class="nav nav-tabs">
+<li class="nav-item">
+  <a class="nav-link active" href="#">Active</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link disabled" href="#">Disabled</a>
+</li>
+</ul>
+
+
+
+
 <script>
 (function(){
 const gnr = () => {
