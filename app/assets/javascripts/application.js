@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap
+//= require popper.js
 //= require bootstrap-sprockets
+//= require turbolinks
 //= require_tree .
+
+setTimeout (() => {
+console.log("settimeout")
+  $('.dropdown-toggle').dropdown()
+
+}, 3000)
