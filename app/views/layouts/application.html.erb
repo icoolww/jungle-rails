@@ -22,6 +22,15 @@
 
   <%= render 'layouts/top_nav' %>
 
+ <div>
+  <% if current_user %>
+    Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <% end %>
+  </div>
+
+
   <main class="container">
     <%= yield %>
   </main>
@@ -37,13 +46,6 @@
     <p class="text-center text-muted">© 2021 Jungle, Inc</p>
   </footer>
 
-  <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
-
-<%= yield %>
 
 </body>
 </html>
