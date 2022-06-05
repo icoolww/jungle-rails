@@ -22,7 +22,7 @@
 
   <%= render 'layouts/top_nav' %>
 
- <div>
+ <div class="user-login">
   <% if current_user %>
     Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% else %>
