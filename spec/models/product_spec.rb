@@ -22,7 +22,7 @@ RSpec.describe Product, type: :model do
       @category = Category.new(name: "Kitchen")
       @product = Product.new(name: "Knife", price: nil, quantity: 20, category: @category)
       expect(@product).to be_invalid
-      expect(@product.errors.full_messages).to include("Price can't be blank")
+      expect(@product.errors.full_messages).to include("Price must be greater than 0")
     end
 
     it "is not valid when a quantity is empty" do

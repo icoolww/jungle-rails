@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 2022_06_03_002543) do
     t.string "name"
     t.text "description"
     t.string "image"
-    t.integer "price_cents"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
