@@ -29,3 +29,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Screenshots
+![Confirmation Page](https://github.com/icoolww/jungle-rails/blob/master/docs/Confirmation%20Page.png)
+![Login Page](https://github.com/icoolww/jungle-rails/blob/master/docs/Login%20Page.png)
+![Main Page](https://github.com/icoolww/jungle-rails/blob/master/docs/Main%20Page.png)
+![Product Page](https://github.com/icoolww/jungle-rails/blob/master/docs/Product%20Page.png)
